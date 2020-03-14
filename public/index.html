@@ -1,0 +1,25 @@
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="./style.css">
+  <title>Hello World!</title>
+  <script src="./startup.js"></script>
+  <script>
+    window.onload = function(){
+      setTimeout(() => {
+        var t = performance.timing;
+        console.log("DOM content loaded - dom content iteractive: ", t.domContentLoadedEventEnd - t.domInteractive)
+        console.log("DOM content loaded: ", t.domContentLoadedEventEnd - t.domContentLoadedEventStart);
+        console.log("DOM: ", t.domContentLoadedEventEnd - t.domLoading);
+        console.log("DOM interactive: ", t.domInteractive - t.domLoading);
+        console.log("Network latency: ", t.responseEnd - t.fetchStart);
+        console.log("Load Page: ",  t.loadEventEnd - t.responseEnd);
+        console.log("Navigation Time: ",  t.loadEventEnd - t.navigationStart);
+      }, 0)
+    }
+  </script>
+</head>
+<body>
+  <h1>Hello, Alligator.io!</h1>
+  <img src="test.png" alt="Alligator.io logo">
+</body>
+</html>
